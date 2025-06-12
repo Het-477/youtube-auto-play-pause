@@ -2,11 +2,21 @@
   "manifest_version": 3,
   "name": "Auto Pause & Play Videos",
   "version": "1.0",
-  "description": "Pauses Youtube videos when tab or window is not active and resumes when focus returns. *Supports multiple sites.",
+  "description": "Pauses videos when tab or window is not active and resumes when focus returns. Supports multiple sites.",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
 
   "options_page": "options.html",
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Auto Pause & Play",
+    "default_icon": {
+      "16": "icons/icon2_16.png",
+      "48": "icons/icon2_16.png",
+      "128": "icons/icon2_16.png"
+    }
+  },
 
   "content_scripts": [
     {
@@ -16,13 +26,16 @@
     }
   ],
 
-  "icons": {
-    "16": "icons/icon2_16.png",
-    "48": "icons/icon2_16.png",
-    "128": "icons/icon2_16.png"
+  "background": {
+    "service_worker": "background.js"
   },
 
-  "action": {
-    "default_title": "Auto Pause & Play"
+  "commands": {
+    "toggle-extension": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Toggle Auto Pause & Play On/Off"
+    }
   }
 }

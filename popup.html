@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Auto Pause & Play</h3>
+    <label>
+        <input type="checkbox" id="toggle-enabled">
+        Extension Enabled
+    </label>
+
+    <hr>
+    <h4>Allowed Sites</h4>
+    <input type="text" id="siteInput" placeholder="e.g. spotify.com">
+    <button id="addSiteBtn">Add</button>
+    <ul id="siteList"></ul>
+
+    <hr>
+    <button onclick="window.open('https://github.com/Het-477/youtube-auto-play-pause')">GitHub</button>
+    <!-- <button onclick="window.open('https://buymeacoffee.com/YOUR_LINK', '_blank')">Donate</button> -->
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
